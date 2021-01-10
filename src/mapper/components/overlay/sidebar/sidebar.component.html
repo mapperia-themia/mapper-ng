@@ -1,0 +1,15 @@
+<sui-sidebar-container class="ui bottom attached segment">
+  <sui-sidebar
+    class="inverted vertical {{navs?.length > 0 ? 'visible': ''}}"
+    #sidebar
+    [isVisible]="isVisible"
+    [direction]="direction"
+    [transition]="transition"
+    (isVisibleChange)="onVisibilityChange($event)"
+  >
+    <a class="item" *ngFor="let nav of navs" [routerLink]="nav.url"><i class="address book icon"></i>{{nav.name}}</a>
+  </sui-sidebar>
+  <sui-sidebar-sibling [isDimmedWhenVisible]="dimmedContent">
+    <ng-content></ng-content>
+  </sui-sidebar-sibling>
+</sui-sidebar-container>

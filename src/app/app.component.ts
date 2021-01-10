@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Navigation} from '../mapper/models/navigation';
 
 @Component({
   selector: 'app-root',
