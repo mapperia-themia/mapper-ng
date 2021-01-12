@@ -1,4 +1,13 @@
 <!-- basic -->
-<button class="ui button {{color}}" tabindex="0">
+<button
+  class="{{size}} ui button {{color}}"
+  [ngClass]="{
+    'basic': outlined,
+    'disabled': disabled,
+    'compact': compact,
+    'circular': rounded,
+    'fluid': full
+  }"
+  tabindex="0">
   <ng-content></ng-content>
 </button>

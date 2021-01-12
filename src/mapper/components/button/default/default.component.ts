@@ -8,6 +8,12 @@ import {Config} from '../../../utils/config';
 })
 export class DefaultComponent implements OnInit {
   @Input() color: Config['color'];
+  @Input() outlined: boolean;
+  @Input() disabled: boolean;
+  @Input() size: Config['size'];
+  @Input() compact = true;
+  @Input() rounded: boolean;
+  @Input() full: boolean;
 
   constructor() { }
 
