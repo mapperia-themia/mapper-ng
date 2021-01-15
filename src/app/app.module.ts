@@ -13,6 +13,7 @@ import {InputModule} from '../mapper/components/form/input/input.module';
 import {TagModule} from '../mapper/components/misc/tag/tag.module';
 import {RibbonModule} from '../mapper/components/misc/ribbon/ribbon.module';
 import {UiBlockModule} from '../mapper/components/misc/ui-block/ui-block.module';
+import {SkeletonModule} from '../mapper/components/misc/skeleton/skeleton.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {UiBlockModule} from '../mapper/components/misc/ui-block/ui-block.module'
     TagModule,
     RibbonModule,
     UiBlockModule,
+    SkeletonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
