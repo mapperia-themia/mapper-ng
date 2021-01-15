@@ -1,0 +1,14 @@
+<div
+  class="ui {{size}} list"
+  [ngClass]="{
+    'relaxed': relax,
+    'divided': divide,
+    'bulleted': bullet,
+    'ordered': ordered,
+    'celled': celled,
+  }"
+>
+  <div class="item" *ngFor="let item of list">
+    <ng-content></ng-content>
+  </div>
+</div>

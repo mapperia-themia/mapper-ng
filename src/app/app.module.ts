@@ -12,6 +12,7 @@ import {IconModule} from '../mapper/components/misc/icon/icon.module';
 import {InputModule} from '../mapper/components/form/input/input.module';
 import {TagModule} from '../mapper/components/misc/tag/tag.module';
 import {RibbonModule} from '../mapper/components/misc/ribbon/ribbon.module';
+import {UiBlockModule} from '../mapper/components/misc/ui-block/ui-block.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {RibbonModule} from '../mapper/components/misc/ribbon/ribbon.module';
     InputModule,
     TagModule,
     RibbonModule,
+    UiBlockModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
