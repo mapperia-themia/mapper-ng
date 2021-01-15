@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DividerComponent } from './divider.component';
+import { FlagComponent } from './flag.component';
 
 
 
 @NgModule({
-    declarations: [DividerComponent],
+    declarations: [FlagComponent],
     exports: [
-        DividerComponent
+        FlagComponent
     ],
     imports: [
         CommonModule
     ]
 })
-export class DividerModule { }
+export class FlagModule { }
