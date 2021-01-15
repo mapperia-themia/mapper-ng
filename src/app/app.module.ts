@@ -10,6 +10,8 @@ import {FlagModule} from '../mapper/components/misc/flag/flag.module';
 import {HeaderModule} from '../mapper/components/panel/header/header.module';
 import {IconModule} from '../mapper/components/misc/icon/icon.module';
 import {InputModule} from '../mapper/components/form/input/input.module';
+import {TagModule} from '../mapper/components/misc/tag/tag.module';
+import {RibbonModule} from '../mapper/components/misc/ribbon/ribbon.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import {InputModule} from '../mapper/components/form/input/input.module';
     HeaderModule,
     IconModule,
     InputModule,
+    TagModule,
+    RibbonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

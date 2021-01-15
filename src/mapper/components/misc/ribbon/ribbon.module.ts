@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TagComponent } from './tag.component';
+import { RibbonComponent } from './ribbon.component';
 
 
 
 @NgModule({
-    declarations: [TagComponent],
+    declarations: [RibbonComponent],
     exports: [
-        TagComponent
+        RibbonComponent
     ],
     imports: [
         CommonModule
     ]
 })
-export class TagModule { }
+export class RibbonModule { }
