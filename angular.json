@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "mapper-ng"
+  "defaultProject": "mapper-ng",
+  "cli": {
+    "analytics": false
+  }
 }
