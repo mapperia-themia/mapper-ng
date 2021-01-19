@@ -1,8 +1,0 @@
-<div class="ui {{color}} label" [ngClass]="{'tag': styled}">
-  <i class="mail icon"></i>
-  <img *ngIf="url" [src]="url">
-  {{label}}
-  <div *ngIf="detail" class="detail">{{detail}}</div>
-  <i *ngIf="icon" class="{{icon}} icon"></i>
-  <i *ngIf="deletable" class="delete icon" (click)="onDelete()"></i>
-</div>
