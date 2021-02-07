@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {SidebarModule} from '../mapper/components/overlay/sidebar/sidebar.module';
-import {LayoutModule} from './layout/layout.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,9 +12,9 @@ import {LayoutModule} from './layout/layout.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
-    SidebarModule,
-    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
