@@ -1,4 +1,5 @@
 import {Component, enableProdMode, OnInit} from '@angular/core';
+import {Utils} from '../mapper/utils/utils';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(Utils);
   }
 
 }
