@@ -203,4 +203,80 @@ export class Utils {
     element.style.display = 'none';
   }
 
+  public static showElement(element): void {
+    element.style.display = '';
+  }
+
+  public static insertAfter(element1, element2): void {
+    element2.parentNode.insertBefore(element1, element2.nextSibling);
+  }
+
+  public static insertBefore(element1, element2): void {
+    element2.parentNode.insertBefore(element1, element2);
+  }
+
+  public static redirectPage(url: string): void {
+    location.href = url;
+  }
+
+  public static refreshCurrentPage(): void {
+    location.reload();
+  }
+
+  public static scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+
+  public static scrollTo(x, y): void {
+    window.scrollTo(x, y);
+  }
+
+  public static isFunction(value): boolean {
+    return ['[object Function]', '[object GeneratorFunction]', '[object AsyncFunction]', '[object Promise]'].includes(Object.prototype.toString.call(value));
+  }
+
+  public static isAsyncFunction(value): boolean {
+    return Object.prototype.toString.call(value) === '[object AsyncFunction]';
+  }
+
+  public static celsiusToFahrenheit(celsius: number): number {
+    return celsius * 9 / 5 + 32;
+  }
+
+  public static fahrenheitToCelsius(fahrenheit: number): number {
+    return (fahrenheit - 32) * 5 / 9;
+  }
+
+  public static convertCookieToObject(): void {
+    document.cookie.split(';').map(item => item.split('=')).reduce((acc, [k, v]) => (acc[k.trim().replace('"', '')] = v) && acc, {});
+  }
+
+  public static hexToRgb(hex: string): number[] {
+    return hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (_, r, g, b) => `#${r}${r}${g}${g}${b}${b}`).substring(1).match(/.{2}/g).map(x => parseInt(x, 16));
+  }
+
+  public static rgbToHex(r: number, g: number, b: number): string {
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+  }
+
+  public static queryParamsToObject(params: string): any {
+    // @ts-ignore
+    return Array.from(new URLSearchParams(params)).reduce((p, [k, v]) => Object.assign({}, p, {[k]: p[k] ? (Array.isArray(p[k]) ? p[k] : [p[k]]).concat(v) : v}), {});
+  }
+
+  public static decodeJWT(token: string): any {
+    return decodeURIComponent(atob(token.split('.')[1].replace('-', '+').replace('_', '/')).split('').map(c => `%${('00' + c.charCodeAt(0).toString(16)).slice(-2)}`).join(''));
+  }
+
+  public static isDarkMode(): boolean {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  public static getType(obj): any {
+    return Object.prototype.toString.call(obj).match(/\[object (.*)\]/)[1];
+  }
+
+  public static redirectToHttps(): any {
+    return (location.protocol === 'https:') ? {} : (location.protocol = 'https:');
+  }
 }
