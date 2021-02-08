@@ -279,4 +279,43 @@ export class Utils {
   public static redirectToHttps(): any {
     return (location.protocol === 'https:') ? {} : (location.protocol = 'https:');
   }
+
+  // Numbers
+  public static getOrdinalSuffixOfNumber(number: number): string {
+    return `${number}${['st', 'nd', 'rd'][((number + 90) % 100 - 10) % 10 - 1] || 'th'}`;
+  }
+
+  public static getNumberPrefixedByZero(number: number, length: number): string {
+    return (number / Math.pow(10, length)).toFixed(length).substr(2);
+  }
+
+  // Objects
+  public static isObjectsAreEqual(...objects): boolean {
+    return objects.every(obj => JSON.stringify(obj) === JSON.stringify(objects[0]));
+  }
+
+  public static getRandomHexColor(): string {
+    return `#${Math.random().toString(16).slice(2, 8).padEnd(6, '0')}`;
+  }
+
+  // Strings
+  public static capitalizeString(str: string): string {
+    return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+  }
+
+  public static getUrlSlagFromString(str: string): void {
+    str.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
+  }
+
+  public static convertWindowsPathToUnixPath(path: string): void {
+    path.replace(/[\\/]+/g, '/').replace(/^([a-zA-Z]+:|\.\/)/, '');
+  }
+
+  public static getExtension(fileName: string): void {
+    fileName.split('.').pop();
+  }
+
+  public static normalizePath(path: string): void {
+    path.replace(/[\\/]+/g, '/');
+  }
 }
