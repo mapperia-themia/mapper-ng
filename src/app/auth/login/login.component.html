@@ -1,17 +1,41 @@
 <form [formGroup]="loginForm" (ngSubmit)="onLogin()" *ngIf="!loggedIn">
-  <text-field *ngIf="!wantRecover" [control]="loginForm.get('username')" mStyle="classic" label="Username" placeholder="e.g. lifeoflikhon" id="name"></text-field>
-  <text-field *ngIf="!wantRecover" [control]="loginForm.get('password')" mStyle="classic" label="Password" placeholder="e.g. ********" id="password"></text-field>
-  <div class="my-1"></div>
-  <footer>
+  <div class="mb-1" *ngIf="tried === 0">
+    <div class="my-1">
+      <text-field
+        [control]="loginForm.get('username')"
+        mStyle="classic"
+        label="Username"
+        placeholder="e.g. lifeoflikhon"
+        id="name"
+      ></text-field>
+    </div>
+
+    <div class="my-1">
+      <text-field
+        [control]="loginForm.get('password')"
+        mStyle="classic"
+        label="Password"
+        placeholder="e.g. ********"
+        id="password"
+      ></text-field>
+    </div>
+  </div>
+
+  <footer class="row center-y space-between">
     <aside>
-      <p>Have no account? <a href="https://aitsidea.com/contact">Contact Now</a></p>
-      <p *ngIf="tried > 0">Forgot Password/Username? <button (click)="wantRecover = true">Recover</button></p>
-      <text-field *ngIf="wantRecover" mStyle="classic" placeholder="Enter your email" id="email" (enteredValue)="onRecover($event)"></text-field>
+      <p class="my-1" *ngIf="!wantRecover">Have no account? <a href="https://aitsidea.com/contact">Contact Now</a></p>
+      <div class="column" *ngIf="tried > 0 && !wantRecover">
+        <p>Forgot Password/Username?</p>
+        <button (click)="wantRecover = true" class="primary my-1">Recover</button>
+      </div>
     </aside>
     <article>
-      <button *ngIf="!wantRecover" type="reset">Reset</button>
-      <button *ngIf="!wantRecover" type="submit">Login</button>
-      <button *ngIf="wantRecover" (click)="onSendOTP()" type="button">Send OTP</button>
+      <button *ngIf="tried === 0" type="reset">Reset</button>
+      <button *ngIf="tried === 0" type="submit" class="primary">Login</button>
+      <div class="column">
+        <text-field *ngIf="wantRecover" mStyle="classic" placeholder="Enter your email" id="email" (enteredValue)="onRecover($event)"></text-field>
+        <button *ngIf="wantRecover" (click)="onSendOTP()" type="button" class="primary my-1">Send OTP</button>
+      </div>
     </article>
   </footer>
 </form>

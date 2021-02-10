@@ -4,6 +4,7 @@ import {AuthService} from './auth/auth.service';
 import {User} from '../db/models/User';
 import {LayoutService} from '../mapper/layout/layout.service';
 import {DbService} from '../db/db.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +18,13 @@ export class AppComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private layoutService: LayoutService,
-    private db: DbService
+    private db: DbService,
+    private title: Title
   ) {
   }
 
   ngOnInit(): void {
+    this.title.setTitle('MapperNG');
 
     if (localStorage.getItem('loggedUser')) {
       this.db.getUsers().subscribe((users) => {
