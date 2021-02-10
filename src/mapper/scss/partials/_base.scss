@@ -1,0 +1,32 @@
+@import "mixins";
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include fontRegular;
+  height: 100vh;
+
+  app-root {
+    height: 100%;
+
+    > * {
+      height: 100%;
+    }
+  }
+}
+
+button, a, input {
+  &:focus {
+    outline: none;
+  }
+}

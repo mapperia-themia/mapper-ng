@@ -1,0 +1,9 @@
+@mixin fontRegular {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

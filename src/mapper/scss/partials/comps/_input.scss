@@ -1,0 +1,26 @@
+@import "../mixins";
+@import "../colors";
+
+input {
+  @include fontRegular;
+  padding: 0.2em 0;
+  width: 100%;
+  min-width: fit-content;
+
+  &:hover {
+    border-color: $primary !important;
+  }
+}
+
+.invalid {
+  color: $red;
+
+  &.input {
+    border-color: $red !important;
+
+    &::placeholder {
+      color: $red;
+      opacity: 0.5;
+    }
+  }
+}

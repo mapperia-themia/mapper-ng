@@ -1,0 +1,66 @@
+$base: 0.25em;
+
+@for $i from 1 to 20 {
+  // margin
+  .m-#{$i} {
+    margin: $base * $i;
+  }
+
+  .mt-#{$i} {
+    margin-top: $base * $i;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $base * $i;
+  }
+
+  .ml-#{$i} {
+    margin-left: $base * $i;
+  }
+
+  .mr-#{$i} {
+    margin-right: $base * $i;
+  }
+
+  .my-#{$i} {
+    margin-top: $base * $i;
+    margin-bottom: $base * $i;
+  }
+
+  .mx-#{$i} {
+    margin-left: $base * $i;
+    margin-right: $base * $i;
+  }
+
+  // padding
+  .p-#{$i} {
+    padding: $base * $i;
+  }
+
+  .pt-#{$i} {
+    padding-top: $base * $i;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: $base * $i;
+  }
+
+  .pl-#{$i} {
+    padding-left: $base * $i;
+  }
+
+  .pr-#{$i} {
+    padding-right: $base * $i;
+  }
+
+  .py-#{$i} {
+    padding-top: $base * $i;
+    padding-bottom: $base * $i;
+  }
+
+  .px-#{$i} {
+    padding-left: $base * $i;
+    padding-right: $base * $i;
+  }
+
+}

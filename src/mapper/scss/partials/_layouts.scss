@@ -1,0 +1,64 @@
+$divided: 12;
+
+// row
+.row {
+  display: flex;
+
+  .col {
+    flex: 1;
+  }
+
+  @for $i from 1 through $divided {
+    .col-#{$i} {
+      width: (100% / $divided) * $i;
+    }
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.center-x {
+    justify-content: center;
+  }
+
+  &.center-y {
+    align-items: center;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+}
+
+// column
+.column {
+  display: flex;
+  flex-direction: column;
+
+  .col {
+    flex: 1;
+  }
+
+  @for $i from 1 through $divided {
+    .col-#{$i} {
+      height: (100% / $divided) * $i;
+    }
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.center-y {
+    justify-content: center;
+  }
+
+  &.center-x {
+    align-items: center;
+  }
+
+  &.space-between {
+    justify-content: space-between;
+  }
+}
