@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$black: rgba(#161616, 1);
+$red: rgba(#920000, 1);
+$primary: rgba(#023962, 1);
+
+@mixin fontRegular {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include fontRegular;
+}
+
+input {
+  @include fontRegular;
+  padding: 0.2em 0;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border-color: $primary !important;
+  }
+}
+
+.invalid {
+  color: $red;
+
+  &.input {
+    border-color: $red !important;
+
+    &::placeholder {
+      color: $red;
+      opacity: 0.5;
+    }
+  }
+}
+
+.my-1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

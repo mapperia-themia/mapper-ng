@@ -318,4 +318,66 @@ export class Utils {
   public static normalizePath(path: string): void {
     path.replace(/[\\/]+/g, '/');
   }
+
+  // Validator
+  public static isDateBetweenTwoOtherDate(date: Date, minDate: Date, maxDate: Date): boolean {
+    return (date.getTime() >= minDate.getTime() && date.getTime() <= maxDate.getTime());
+  }
+
+  public static isToday(date: Date): boolean {
+    return date.toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10);
+  }
+
+  public static isPrime(num: number): boolean {
+    return (num > 1) && Array(Math.floor(Math.sqrt(num)) - 1).fill(0).map((_, i) => i + 2).every(i => num % i !== 0);
+  }
+
+  public static isNotPrime(num: number): boolean {
+    return !this.isPrime(num);
+  }
+
+  public static isEven(n: number): boolean {
+    return (n % 2 === 0);
+  }
+
+  public static isOdd(n: number): boolean {
+    return !this.isEven(n);
+  }
+
+  public static isNumberInGivenRange(num: number, a: number, b: number): boolean {
+    return (Math.min(a, b) <= num && num < Math.max(a, b));
+  }
+
+  public static isNegative(n: number): boolean {
+    return n < 0;
+  }
+
+  public static isPositive(n: number): boolean {
+    return !this.isNegative(n);
+  }
+
+  public static isContainsLowerCase(str: string): boolean {
+    return str !== str.toUpperCase();
+  }
+
+  public static isContainsWhitespace(str: string): boolean {
+    return /\s/.test(str);
+  }
+
+  public static isHexDecimal(str: string): boolean {
+    return /^[A-F0-9]+$/i.test(str);
+  }
+
+  public static isNumber(value: any): boolean {
+    return !isNaN(parseFloat(value)) && isFinite(value);
+  }
+
+  public static isPlainObject(v: any): boolean {
+    return (!!v && typeof v === 'object' && (v.__proto__ === null || v.__proto__ === Object.prototype));
+  }
+
+  public static isLeapYear(year: number): boolean {
+    return (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0));
+  }
+
 }
