@@ -6,6 +6,7 @@ input {
   padding: 0.2em 0;
   width: 100%;
   min-width: fit-content;
+  background: transparent;
 
   &:hover {
     border-color: $primary !important;

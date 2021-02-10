@@ -1,1 +1,11 @@
 @import "mapper/scss/main";
+
+.username {
+  text-transform: lowercase;
+}
+
+.hide-on-mobile {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

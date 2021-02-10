@@ -6,6 +6,8 @@ import { ActionComponent } from './action/action.component';
 import { TaskbarComponent } from './taskbar/taskbar.component';
 import { PreviewComponent } from './preview/preview.component';
 import { ControlComponent } from './control/control.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {FormsModule} from '../../comps/forms/forms.module';
 
 
 
@@ -19,8 +21,10 @@ import { ControlComponent } from './control/control.component';
     PreviewComponent,
     TaskbarComponent
   ],
-    imports: [
-        CommonModule
-    ]
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    FormsModule
+  ]
 })
 export class LayoutHelperModule { }

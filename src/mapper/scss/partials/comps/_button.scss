@@ -1,7 +1,6 @@
 @import "../colors";
 button {
   padding: 0.7em 1em;
-  min-width: 10ch;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
@@ -17,4 +16,9 @@ button {
   &:hover {
     cursor: pointer;
   }
+}
+
+*[role="button"] {
+  cursor: pointer;
+  tab-index: 0;
 }

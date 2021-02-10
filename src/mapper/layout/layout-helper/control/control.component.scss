@@ -1,0 +1,17 @@
+@import "src/styles";
+.control {
+  background: rgba($black, 0.05);
+
+  .suggestions {
+    a {
+      border: 1px solid $black;
+      border-radius: 1000px;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: $black;
+    }
+  }
+}
