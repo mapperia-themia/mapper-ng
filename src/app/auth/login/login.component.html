@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" *ngIf="!loggedIn">
+  <text-field *ngIf="!wantRecover" [control]="loginForm.get('username')" mStyle="classic" label="Username" placeholder="e.g. lifeoflikhon" id="name"></text-field>
+  <text-field *ngIf="!wantRecover" [control]="loginForm.get('password')" mStyle="classic" label="Password" placeholder="e.g. ********" id="password"></text-field>
+  <div class="my-1"></div>
+  <footer>
+    <aside>
+      <p>Have no account? <a href="https://aitsidea.com/contact">Contact Now</a></p>
+      <p *ngIf="tried > 0">Forgot Password/Username? <button (click)="wantRecover = true">Recover</button></p>
+      <text-field *ngIf="wantRecover" mStyle="classic" placeholder="Enter your email" id="email" (enteredValue)="onRecover($event)"></text-field>
+    </aside>
+    <article>
+      <button *ngIf="!wantRecover" type="reset">Reset</button>
+      <button *ngIf="!wantRecover" type="submit">Login</button>
+      <button *ngIf="wantRecover" (click)="onSendOTP()" type="button">Send OTP</button>
+    </article>
+  </footer>
+</form>

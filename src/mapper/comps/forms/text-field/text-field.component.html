@@ -1,0 +1,47 @@
+<div
+  class="input-wrapper"
+  [ngClass]="dynamicClasses"
+>
+  <label
+    *ngIf="label"
+    [attr.for]="id"
+    class="label"
+    [ngClass]="{'invalid': hasError()}"
+  >{{label}}</label>
+
+  <div class="input-field-wrapper" *ngIf="!control">
+    <input
+      [id]="id"
+      type="text"
+      [name]="id"
+      [placeholder]="placeholder"
+      [autocomplete]="autocomplete"
+      (change)="onChange($event)"
+      (input)="onInput($event)"
+      [spellcheck]="spellCheck"
+      [readOnly]="readOnly"
+      class="input"
+      [ngClass]="{'invalid': hasError()}"
+    >
+    <small *ngIf="hint" class="hint">{{hint}}</small>
+  </div>
+
+  <div class="input-field-wrapper" *ngIf="control">
+    <input
+      [id]="id"
+      type="text"
+      [name]="id"
+      [placeholder]="placeholder"
+      [formControl]="control"
+      [autocomplete]="autocomplete"
+      (change)="onChange($event)"
+      (input)="onInput($event)"
+      [spellcheck]="spellCheck"
+      [readOnly]="readOnly"
+      class="input"
+      [ngClass]="{'invalid': hasError()}"
+    >
+    <small *ngIf="hint && !hasError()" class="hint">{{hint}}</small>
+    <small [ngClass]="{'invalid': hasError()}" class="error" *ngIf="hasError()">{{getErrorText()}}</small>
+  </div>
+</div>
