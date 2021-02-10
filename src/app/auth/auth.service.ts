@@ -28,6 +28,7 @@ export class AuthService {
 
     if (requestedUser && requestedUser.active) {
       this.activeUser.next(requestedUser);
+      console.log(requestedUser);
       localStorage.setItem('loggedUser', requestedUser.id.toString());
       return true;
     } else {
