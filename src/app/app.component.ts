@@ -6,9 +6,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  ps: string[] = ['1', '2', '3', '4'];
+  key: string = '';
   constructor() {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
