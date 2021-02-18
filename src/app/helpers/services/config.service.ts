@@ -1,8 +1,8 @@
-import {Inject, Injectable, InjectionToken} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {Config} from '../types';
 import {Router} from '@angular/router';
-import {config} from '../../core/db/default';
+import {config} from '../../core/db/config';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,7 @@ export class ConfigService {
 
   private setConfigFromLocalStorage(): void {
     // anything
+    //  TODO: check local storage and merge with config
   }
 
   getCurrentConfig(): BehaviorSubject<Config> {

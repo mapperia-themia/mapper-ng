@@ -1,7 +1,7 @@
 import {Config} from '../../../helpers/types';
 
 export const config: Config = {
-  colorTheme: 'theme-default',
+  colorTheme: 'theme-config',
   layout: {
     style: 'vertical-layout-1',
     width: 'fullWidth',
