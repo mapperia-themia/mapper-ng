@@ -1,11 +1,5 @@
 export class Utils {
-  /**
-   * Filter array by string
-   *
-   * @returns {any}
-   * @param mainArray
-   * @param searchKey
-   */
+
   public static filterArrayByString(mainArray: any[], searchKey: string): any[] {
     if (searchKey === '') {
       return mainArray;
@@ -18,13 +12,6 @@ export class Utils {
     });
   }
 
-  /**
-   * Search in object
-   *
-   * @param itemObj
-   * @param searchText
-   * @returns {boolean}
-   */
   public static searchInObj(itemObj: any, searchText: string): boolean {
     for (const prop in itemObj) {
       if (!itemObj.hasOwnProperty(prop)) {
@@ -49,13 +36,6 @@ export class Utils {
     }
   }
 
-  /**
-   * Search in array
-   *
-   * @param array
-   * @param searchText
-   * @returns {boolean}
-   */
   public static searchInArray(array: any[], searchText: string): boolean {
     for (const value of array) {
       if (typeof value === 'string') {
@@ -71,23 +51,10 @@ export class Utils {
     return false;
   }
 
-  /**
-   * Search in string
-   *
-   * @param value
-   * @param searchText
-   * @returns {any}
-   */
   public static searchInString(value: string, searchText: string): boolean {
     return value.toLowerCase().includes(searchText);
   }
 
-  /**
-   * Toggle in array
-   *
-   * @param item
-   * @param array
-   */
   public static toggleInArray(item: any, array: any[]): void {
     if (array.indexOf(item) === -1) {
       array.push(item);
