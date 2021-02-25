@@ -3,3 +3,8 @@
 @import "lib/lib";
 @import "elements/elements";
 @import "addons/addons";
+
+img {
+  width: 100%;
+  display: block;
+}
