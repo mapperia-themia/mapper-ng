@@ -7,6 +7,7 @@ import {Utils} from '../utils';
 export class FilterPipe implements PipeTransform {
 
   transform(mainArray: any[], searchText: string): any[] {
+    console.log(mainArray, searchText);
     return Utils.filterArrayByString(mainArray, searchText);
   }
 
