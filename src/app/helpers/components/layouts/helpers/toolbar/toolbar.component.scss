@@ -1,0 +1,46 @@
+.mat-toolbar-single-row {
+  height: 40px;
+}
+
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-nav-panel {
+  display: flex;
+  align-items: center;
+
+  .app-name-container {
+    margin-right: 3em;
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    a {
+      font-weight: 400;
+      font-size: 0.9rem !important;
+    }
+  }
+}
+
+.avatar-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 1em;
+  }
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
