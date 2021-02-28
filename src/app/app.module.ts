@@ -7,19 +7,27 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {PipesModule} from './helpers/pipes/pipes.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {LayoutsModule} from './helpers/components/layouts/layouts.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        AppRoutingModule,
-        FontAwesomeModule,
-        PipesModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    PipesModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    LayoutsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
