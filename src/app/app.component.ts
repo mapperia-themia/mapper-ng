@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Account, AccountType} from './types';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,11 @@ import {Account, AccountType} from './types';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   constructor() {
+
   }
 
   ngOnInit(): void {
   }
+
 }
