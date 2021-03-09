@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {Utils} from './helpers/utils';
+import {Account, AccountType} from './types';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 }
