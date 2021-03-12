@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {PdfViewerModule} from './addons/pdf-viewer/pdf-viewer.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {PdfViewerModule} from './addons/pdf-viewer/pdf-viewer.module';
     HttpClientModule,
     AppRoutingModule,
     PdfViewerModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
