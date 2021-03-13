@@ -1,0 +1,27 @@
+html {
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+html.idea {
+  $primary: #0783bf;
+  $secondary: #35d8e7;
+
+  $theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary
+  );
+
+  @import "node_modules/bootstrap/scss/bootstrap";
+}
+
+html.admin {
+  $primary: #2A74A5;
+  $secondary: #138573;
+
+  $theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary
+  );
+
+  @import "node_modules/bootstrap/scss/bootstrap";
+}
