@@ -1,3 +1,10 @@
 <div class="pdf-viewer">
-  <ng2-pdfjs-viewer [pdfSrc]="src"></ng2-pdfjs-viewer>
+  <ng2-pdfjs-viewer viewerId="hello1234" (onDocumentLoad)="onDocumentLoad($event)" #pdfViewer [pdfSrc]="src"></ng2-pdfjs-viewer>
 </div>
+
+<button style="background: transparent; border: 0; margin-top: 7px" id="exportBtn" #exportBtn>
+  <img *ngFor="let btn of btns" (click)="onClickButton(btn)" style="padding: 0 5px" width="16" height="16" [src]="btn.icon" alt="">
+</button>
+
+
+

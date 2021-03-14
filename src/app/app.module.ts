@@ -7,19 +7,21 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {PdfViewerModule} from './addons/pdf-viewer/pdf-viewer.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {PlaygroundModule} from './playground/playground.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    PdfViewerModule,
-    NgbModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        AppRoutingModule,
+        PdfViewerModule,
+        NgbModule,
+        PlaygroundModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
