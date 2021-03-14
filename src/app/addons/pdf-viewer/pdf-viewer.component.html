@@ -1,10 +1,48 @@
 <div class="pdf-viewer">
-  <ng2-pdfjs-viewer viewerId="hello1234" (onDocumentLoad)="onDocumentLoad($event)" #pdfViewer [pdfSrc]="src"></ng2-pdfjs-viewer>
+  <ng2-pdfjs-viewer
+    [pdfSrc]="src"
+    [viewerId]="viewerId"
+    [viewerFolder]="folder"
+    [externalWindow]="newTab"
+    [externalWindowOptions]="newTabOptions"
+    [downloadFileName]="name"
+    [page]="goToPage"
+    [lastPage]="goToLastPage"
+    [nameddest]="goToSection"
+    [zoom]="zoom"
+    [print]="allowPrint"
+    [startPrint]="printOnLoad"
+    [download]="allowDownload"
+    [find]="allowSearch"
+    [startDownload]="downloadOnLoad"
+    [rotatecw]="rotateRight"
+    [rotateccw]="rotateLeft"
+    [cursor]="cursorType"
+    [spread]="spread"
+    [fullScreen]="fullScreen"
+    [pagemode]="mode"
+    [openFile]="allowOpenFile"
+    [viewBookmark]="allowBookmark"
+    [locale]="i18n"
+    [useOnlyCssZoom]="cssZoom"
+    [errorMessage]="error"
+    [errorAppend]="appendedError"
+    [errorOverride]="overriddenError"
+    [diagnosticLogs]="printLogs"
+    [scroll]="scroll"
+
+    (onBeforePrint)="onBeforePrint()"
+    (onAfterPrint)="onAfterPrint()"
+    (onPageChange)="onPageChange($event)"
+    (onDocumentLoad)="onDocumentLoad($event)"
+
+    #pdfViewer
+  ></ng2-pdfjs-viewer>
 </div>
 
-<button style="background: transparent; border: 0; margin-top: 7px" id="exportBtn" #exportBtn>
-  <img *ngFor="let btn of btns" (click)="onClickButton(btn)" style="padding: 0 5px" width="16" height="16" [src]="btn.icon" alt="">
-</button>
+<div style="background: transparent; border: 0; margin-top: 7px" id="exportBtn" #exportBtn>
+  <img role="button" [title]="btn.name" *ngFor="let btn of btns" (click)="onClickButton(btn)" style="padding: 0 5px" width="16" height="16" [src]="btn.icon" [alt]="btn.name">
+</div>
 
 
 
